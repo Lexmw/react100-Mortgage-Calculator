@@ -39,21 +39,26 @@ export default class App extends React.Component {
          
   render() {
     return (
-      <div className='container'>
-          <h3 class='center-block'>Mortgage Calculator</h3>
-        <div class='form-group'>
-          <label>Balance</label>
+      <div className='container center-block'>
+        <div className='center-block'>
+            <h3>Mortgage Calculator</h3>
+          </div>
+        <div className='form-group'>
+          <label className='center-block'>Balance</label>
           <input 
-              class='form-control'
+              id='balance'
+              className='col-md-4 center-block'
               name='balance' 
               type='number' 
               placeholder='Balance'
               value = {this.state.balance} 
               onChange = {this.HandleChange}/> 
         </div>
-        <div class='form-group'>
-          <label>Rate</label>
+        <div className='form-group'>
+          <label className='center-block'>Rate</label>
           <input 
+              className='col-md-4 center-block'
+              id='rate'
               name="rate" 
               type="number" 
               step ="0.01" 
@@ -61,17 +66,22 @@ export default class App extends React.Component {
               value = {this.state.rate} 
               onChange = {this.HandleChange}/>
         </div>
-        <div class='form-group'>
-          <label>Term</label>
-          <select name='term' id='term' value={this.state.term} onChange={this.HandleChange}>
+        <div className='form-group'>
+          <label className='center-block'>Term</label>
+          <select 
+              className='center-block'
+              name='term' 
+              id='term' 
+              value={this.state.term} 
+              onChange={this.HandleChange}>
             <option value ="15"> 15 </option>
             <option value="30"> 30 </option>
           </select>
         </div>
-        <div class='form-group'>
+        <div className='form-group'>
           <button
             type='button' 
-            class='btn btn-primary btn-block'
+            className='btn btn-primary btn-block'
             name ='submit' 
             value={this.state.output} 
             onClick = {this.ClickHandle}>Calculate Mortgage</button>
